@@ -7,8 +7,6 @@
 
 import SwiftUI
 import FirebaseAuth
-import FirebaseFirestore
-
 
 struct ContentView: View {
     @State private var email: String = ""
@@ -88,28 +86,10 @@ struct ContentView: View {
                 } else {
                     isSignedIn = true
                     errorMessage = ""
-                    saveUserData()
                 }
             }
         }
-    let db = Firestore.firestore()
-    func saveUserData() {
-        let userData: [String: Any] = [
-            "email": email,
-            "createdAt": Date(),
-        ]
-        
-        db.collection("users").document(email).setData(userData) { error in
-            if let error = error {
-                print("Failed to save user data: \(error)")
-            } else {
-                print("Successful person added")
-            }
-        }
-        
-    }
 }
-
 
 #Preview {
     ContentView()
