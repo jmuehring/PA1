@@ -27,7 +27,7 @@ struct ContentView: View {
                 .foregroundColor(.white)
                 .cornerRadius(8)
             } else {
-                Text("Sign In")
+                Text("Welcome")
                     .font(.largeTitle)
                     .padding()
                 TextField("Email", text: $email)
@@ -45,11 +45,11 @@ struct ContentView: View {
                     signIn()
                 }
                 .padding()
-                .background(Color.blue)
+                .background(Color.green)
                 .foregroundColor(.white)
-                .cornerRadius(8)
+                .cornerRadius(10)
                 
-                Button("Sign Up") {
+                Button("Register") {
                     signUp()
                 }
                 .padding()
